@@ -20,15 +20,19 @@ app.get("/ads", (request, response) => {
     return response.json([
         {
             id: 1,
-            name: "CS"
+            name: "CS: GO"
         },
         {
             id: 2,
             name: "Lol"
         },
         {
-            id: 1,
+            id: 3,
             name: "Valorant"
+        },
+        {
+            id: 4,
+            name: "GTA Vice City"
         },
     ])
 })
