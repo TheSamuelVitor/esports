@@ -1,4 +1,4 @@
-// importando uma dependencia 
+// importando uma dependencia
 
 // -- de uma forma antiga
 // o arquivo pode ser apenas ".js"
@@ -7,40 +7,61 @@
 // -- de uma forma mais nova
 // ECMAScript Modules
 // o arquivo deve ser ".mjs"
-import express from "express"
+import express, { request, response } from "express";
 
-// inicializando o app com express 
-const app = express()
+// inicializando o app com express
+const app = express();
 
-var nomes = ["Samuel", "Vitor", "Franca"]
+app.get("/games", (request, response) => {
+  return response.status(201).json([
+    {
+      id: 1,
+      name: "CS: GO",
+    },
+    {
+      id: 2,
+      name: "Lol",
+    },
+    {
+      id: 3,
+      name: "Valorant",
+    },
+    {
+      id: 4,
+      name: "GTA Vice City",
+    },
+  ]);
+});
 
-// ao usuario acessar o /adds na rota ele recebe o que a rota passar
 app.get("/ads", (request, response) => {
-    console.log("Acessou /ads")
-    return response.json([
-        {
-            id: 1,
-            name: "CS: GO"
-        },
-        {
-            id: 2,
-            name: "Lol"
-        },
-        {
-            id: 3,
-            name: "Valorant"
-        },
-        {
-            id: 4,
-            name: "GTA Vice City"
-        },
-    ])
-})
+  console.log("Acessou /ads");
+  return response.status(200).json([
+    {
+      id: 1,
+      name: "Anuncio 1",
+    },
+    {
+      id: 2,
+      name: "Anuncio 2",
+    },
+    {
+      id: 3,
+      name: "Anuncio 3",
+    },
+    {
+      id: 4,
+      name: "Anuncio 4",
+    },
+  ]);
+});
 
-app.get("/nomes", (req, res) => {
-    console.log("Acessou /nome")
-    return res.json(nomes)
-})
+app.post("/ads", (request, response) => {
+  return response.status(202).json([
+    {
+      message: "created",
+    },
+  ]);
+});
 
 // passando a rota para o aplicativo rodar
-app.listen(3000)
+app.listen(3000);
