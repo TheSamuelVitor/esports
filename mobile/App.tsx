@@ -1,10 +1,9 @@
-import React from 'react';
-import { View } from 'react-native';
+import { Background } from './src/components/background';
 
-export function mobile() {
+export default function App() {
   return (
-    <View>
+    <Background>
 
-    </View>
+    </Background>
   );
 }
