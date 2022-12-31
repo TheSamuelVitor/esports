@@ -9,3 +9,8 @@ Aplicativo onde apenas uma página é renderizada no navegador. O frontEnd apena
 
 - SSR: Server Side Rendering
 Aplicativo onde o FrontEnd e o BackEnd de uma aplicação ficam guardados em um mesmo local, no server side.
+
+## A fazer
+- Mobile;
+- FrontEnd;
+- BackEnds;
